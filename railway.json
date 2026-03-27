@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "php artisan migrate --force --no-interaction; php artisan db:seed --class=ServiceSeeder --force --no-interaction; php artisan db:seed --class=AdminSeeder --force --no-interaction; php -S 0.0.0.0:${PORT:-8000} -t public",
+    "startCommand": "php artisan migrate --force --no-interaction; php artisan db:seed --class=ServiceSeeder --force --no-interaction; php artisan db:seed --class=AdminSeeder --force --no-interaction; php -S 0.0.0.0:${PORT:-3000} -t public",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 3
   }
