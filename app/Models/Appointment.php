@@ -15,6 +15,7 @@ class Appointment extends Model
         'end_time',
         'status',
         'notes',
+        'decline_reason',
         'external_booking_id',
     ];
 
