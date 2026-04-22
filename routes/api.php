@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AppointmentController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\AvailabilityController;
 use App\Http\Controllers\Api\DocumentController;
@@ -20,6 +21,7 @@ Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/services/{service}', [ServiceController::class, 'show']);
 Route::get('/availability', [AvailabilityController::class, 'index']);
 Route::get('/dentists', [AvailabilityController::class, 'dentists']);
+Route::post('/contact', [ContactController::class, 'submit'])->middleware('throttle:10,1');
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
